@@ -12,6 +12,15 @@
 
   <!-- custom css -->
   <link rel="stylesheet" href="css/style.css" />
+  
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+  </script>
+  
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("8Qjf3YE8puXaq4T9T");
+    })();
+  </script>
 </head>
 
 <body>
@@ -189,17 +198,18 @@
   <!-- contact section design -->
   <section class="contact" id="contact">
     <h2 class="heading">Contact <span>Me!</span></h2>
-    <form action="#">
+  <form id="myForm">
       <div class="input-box">
-        <input type="text" placeholder="Full Name">
-        <input type="email" placeholder="Email Address">
+        <input type="text" placeholder="Full Name" id="name" required>
+        <input type="email" placeholder="Email Address" id="email" required>
       </div>
       <div class="input-box">
-        <input type="number" placeholder="Mobile Number">
-        <input type="text" placeholder="Email Subject">
+        <input type="number" placeholder="Mobile Number" id="phone">
+        <input type="text" placeholder="Email Subject" id="subject">
       </div>
-      <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-      <input type="submit" value="Send Message" class="btn">
+      <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+      <input type="submit" value="Send Message" class="btn" id="sendBtn" required>
+      <!-- <button type="submit" class="btn" id="sendBtn">Send Message</button> -->
     </form>
   </section>
   <!-- footer design -->
@@ -221,6 +231,7 @@
 
   <!-- custom js -->
   <script src="js/script.js"></script>
+  <script src="js/form.js"></script>
 </body>
 
 </html>
